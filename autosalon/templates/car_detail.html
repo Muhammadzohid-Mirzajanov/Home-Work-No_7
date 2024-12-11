@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ car.name }}</title>
+</head>
+
+<body>
+    <h1>{{ car.name }}</h1>
+    <p><strong>Brand:</strong> {{ car.brand.name }}</p>
+    <p><strong>Price:</strong> ${{ car.price }}</p>
+    <p><strong>Description:</strong> {{ car.description }}</p>
+    {% if car.image %}
+    <img src="{{ car.image.url }}" alt="{{ car.name }}">
+    {% endif %}
+    <a href="{% url 'brand_cars' car.brand.id %}">Back to {{ car.brand.name }}</a>
+</body>
+
+</html>
